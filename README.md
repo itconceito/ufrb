@@ -1,4 +1,4 @@
-ls Trabalho 1: Site Institucional com HTML Semântico
+# Trabalho 1: Site Institucional com HTML Semântico
 
 **Instituição (fictícia):** Instituto Horizonte de Educação
 **Disciplina / Curso:** Licenciatura em Computação (EAD), UFRB
