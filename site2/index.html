@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Instituto Horizonte de Educação: ensino de qualidade, cursos técnicos, graduação e programas de extensão em Salvador, Bahia.">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#184082">
+  <title>Instituto Horizonte de Educação - Página Inicial</title>
+
+  <!-- Fontes do Google Fonts: Poppins (títulos) e Nunito Sans (texto) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&amp;family=Poppins:wght@600;700&amp;display=swap">
+
+  <!-- Folhas de estilo do projeto -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <!-- Link de salto: permite que usuários de teclado e leitores de tela pulem o menu -->
+  <a class="skip-link" href="#conteudo-principal" title="Pular direto para o conteúdo principal">Pular para o conteúdo principal</a>
+
+  <!-- ===== CABEÇALHO: logo e menu de navegação ===== -->
+  <header class="site-header">
+    <div class="site-header__inner">
+
+      <div class="brand">
+        <a class="brand__link" href="index.html" title="Ir para a página inicial do Instituto Horizonte">
+          <img class="brand__logo" src="images/logo.png" alt="Logotipo do Instituto Horizonte: sol amarelo nascendo sobre um livro aberto, em círculo azul" width="80" height="80">
+        </a>
+        <p class="brand__name">Instituto Horizonte de Educação</p>
+      </div>
+
+      <!-- Menu hambúrguer (somente CSS): o checkbox controla a abertura do menu no mobile -->
+      <input class="nav-toggle__input" type="checkbox" id="menu-toggle" title="Abrir ou fechar o menu">
+      <label class="nav-toggle__button" for="menu-toggle">
+        <span class="nav-toggle__bar"></span>
+        <span class="nav-toggle__bar"></span>
+        <span class="nav-toggle__bar"></span>
+        <span class="visually-hidden">Abrir ou fechar o menu de navegação</span>
+      </label>
+
+      <nav class="nav" aria-label="Menu principal">
+        <ul class="nav__list">
+          <li><a class="nav__link" href="index.html" title="Página inicial" aria-current="page">Início</a></li>
+          <li><a class="nav__link" href="sobre.html" title="Conheça nossa história, equipe e estrutura">Sobre Nós</a></li>
+          <li><a class="nav__link" href="cursos.html" title="Veja todos os cursos e programas">Cursos</a></li>
+          <li><a class="nav__link" href="contato.html" title="Fale com a gente">Contato</a></li>
+        </ul>
+      </nav>
+
+    </div>
+  </header>
+
+  <!-- ===== CONTEÚDO PRINCIPAL ===== -->
+  <main class="site-main" id="conteudo-principal">
+
+    <!-- Seção hero: apresentação da instituição -->
+    <section class="hero" aria-labelledby="titulo-hero">
+      <div class="hero__text">
+        <h1 class="hero__title" id="titulo-hero">Bem-vindo ao Instituto Horizonte de Educação</h1>
+        <p class="hero__lead">
+          Há mais de 25 anos formamos estudantes e educadores com excelência,
+          ética e compromisso social. Venha conhecer um espaço onde aprender é
+          uma aventura coletiva.
+        </p>
+        <p class="hero__actions">
+          <a class="btn btn--primary" href="cursos.html" title="Conheça nossos cursos">Conheça os cursos</a>
+          <a class="btn btn--secondary" href="contato.html" title="Entre em contato para se matricular">Fale conosco</a>
+        </p>
+      </div>
+
+      <figure class="hero__media">
+        <img src="images/hero.jpg" alt="Ilustração institucional com um capelo de formatura sobre fundo azul e o lema &quot;Aprender hoje, transformar o amanhã&quot;" width="1200" height="500">
+        <figcaption class="hero__caption">Aprender hoje, transformar o amanhã: o lema do Instituto Horizonte.</figcaption>
+      </figure>
+    </section>
+
+    <!-- Seção sobre a instituição: missão, visão e valores -->
+    <section class="section" aria-labelledby="titulo-sobre">
+      <h2 class="section__title" id="titulo-sobre">Sobre a instituição</h2>
+      <p class="section__intro">
+        O Instituto Horizonte é uma organização educacional sem fins lucrativos
+        sediada em Salvador, Bahia. Atuamos da formação técnica à graduação,
+        com projetos de extensão voltados à comunidade.
+      </p>
+
+      <div class="card-grid card-grid--trio">
+        <article class="card card--value">
+          <div class="card__body">
+            <h3 class="card__title">Missão</h3>
+            <p>
+              Promover educação pública de qualidade, formando pessoas críticas,
+              criativas e preparadas para transformar a sociedade.
+            </p>
+          </div>
+        </article>
+
+        <article class="card card--value">
+          <div class="card__body">
+            <h3 class="card__title">Visão</h3>
+            <p>
+              Ser referência regional em inovação pedagógica e inclusão
+              educacional até 2030.
+            </p>
+          </div>
+        </article>
+
+        <article class="card card--value">
+          <div class="card__body">
+            <h3 class="card__title">Valores</h3>
+            <ul>
+              <li>Ética e transparência</li>
+              <li>Inclusão e respeito à diversidade</li>
+              <li>Inovação e pensamento crítico</li>
+              <li>Compromisso com a comunidade</li>
+              <li>Sustentabilidade</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Destaques de cursos e programas -->
+    <section class="section" aria-labelledby="titulo-destaques">
+      <h2 class="section__title" id="titulo-destaques">Destaques de cursos e programas</h2>
+
+      <div class="card-grid card-grid--trio">
+        <article class="card">
+          <figure class="card__media">
+            <img src="images/curso-informatica.jpg" alt="Ilustração de símbolos de código, os sinais de menor e maior com uma barra, representando o curso de Informática e Programação" width="800" height="450">
+            <figcaption class="card__caption">Curso técnico integrado ao ensino médio.</figcaption>
+          </figure>
+          <div class="card__body">
+            <h3 class="card__title">Informática e Programação</h3>
+            <p>Lógica, desenvolvimento web e banco de dados com muita prática em laboratório.</p>
+            <p class="card__more"><a href="cursos.html#informatica" title="Saiba mais sobre Informática e Programação">Saiba mais</a></p>
+          </div>
+        </article>
+
+        <article class="card">
+          <figure class="card__media">
+            <img src="images/curso-pedagogia.jpg" alt="Ilustração de um livro aberto sobre fundo terracota, representando o curso de Licenciatura em Pedagogia" width="800" height="450">
+            <figcaption class="card__caption">Formação de professores para a educação básica.</figcaption>
+          </figure>
+          <div class="card__body">
+            <h3 class="card__title">Licenciatura em Pedagogia</h3>
+            <p>Estágios desde o primeiro ano e parcerias com escolas da rede pública.</p>
+            <p class="card__more"><a href="cursos.html#pedagogia" title="Saiba mais sobre Licenciatura em Pedagogia">Saiba mais</a></p>
+          </div>
+        </article>
+
+        <article class="card">
+          <figure class="card__media">
+            <img src="images/curso-robotica.jpg" alt="Ilustração de uma engrenagem branca sobre fundo cinza-azulado, representando o programa de Robótica Educacional" width="800" height="450">
+            <figcaption class="card__caption">Programa de extensão aberto à comunidade.</figcaption>
+          </figure>
+          <div class="card__body">
+            <h3 class="card__title">Robótica Educacional</h3>
+            <p>Montagem, programação e competições de robótica para jovens de 12 a 17 anos.</p>
+            <p class="card__more"><a href="cursos.html#robotica" title="Saiba mais sobre Robótica Educacional">Saiba mais</a></p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Conteúdo complementar: avisos e links úteis -->
+    <aside class="aside-box" aria-labelledby="titulo-avisos">
+      <h2 class="aside-box__title" id="titulo-avisos">Avisos importantes</h2>
+      <p>Calendário de matrículas do próximo semestre:</p>
+      <ol>
+        <li>Inscrição on-line: de 1 a 15 do mês de novembro</li>
+        <li>Entrega de documentos: de 16 a 25 de novembro</li>
+        <li>Divulgação dos resultados: 30 de novembro</li>
+        <li>Início das aulas: primeira semana de fevereiro</li>
+      </ol>
+      <p>
+        Dúvidas sobre o Ministério da Educação?
+        Acesse o
+        <a href="https://www.gov.br/mec/pt-br" target="_blank" rel="noopener noreferrer" title="Site do Ministério da Educação (abre em nova aba)">portal do MEC</a>.
+      </p>
+    </aside>
+
+  </main>
+
+  <!-- ===== RODAPÉ: contato, navegação e redes sociais ===== -->
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+
+      <div class="footer-col">
+        <h2 class="footer-col__title">Contato</h2>
+        <address>
+          <strong>Instituto Horizonte de Educação</strong><br>
+          Rua da Aprendizagem, 123 - Centro<br>
+          Salvador - BA, 40000-000<br>
+          Telefone: <a href="tel:+557130000000" title="Ligar para o Instituto">(71) 3000-0000</a><br>
+          E-mail: <a href="mailto:contato@institutohorizonte.example" title="Enviar e-mail ao Instituto">contato@institutohorizonte.example</a>
+        </address>
+      </div>
+
+      <div class="footer-col">
+        <h2 class="footer-col__title">Navegação</h2>
+        <nav aria-label="Menu do rodapé">
+          <ul class="footer-nav">
+            <li><a href="index.html" title="Página inicial">Início</a></li>
+            <li><a href="sobre.html" title="Conheça nossa história, equipe e estrutura">Sobre Nós</a></li>
+            <li><a href="cursos.html" title="Veja todos os cursos e programas">Cursos</a></li>
+            <li><a href="contato.html" title="Fale com a gente">Contato</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <div class="footer-col">
+        <h2 class="footer-col__title">Redes sociais</h2>
+        <ul class="social">
+          <li><a class="social__link" href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" title="Instagram do Instituto (abre em nova aba)">Instagram</a></li>
+          <li><a class="social__link" href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" title="Facebook do Instituto (abre em nova aba)">Facebook</a></li>
+          <li><a class="social__link" href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer" title="Canal do Instituto no YouTube (abre em nova aba)">YouTube</a></li>
+          <li><a class="social__link" href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" title="LinkedIn do Instituto (abre em nova aba)">LinkedIn</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- Copyright -->
+    <div class="site-footer__bottom">
+      <p><small>&copy; 2026 Instituto Horizonte de Educação (instituição fictícia, criada para fins didáticos). Todos os direitos reservados.</small></p>
+    </div>
+  </footer>
+
+</body>
+</html>

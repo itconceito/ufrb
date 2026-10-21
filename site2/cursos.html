@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Cursos e programas do Instituto Horizonte de Educação: Informática, Pedagogia, Idiomas, Robótica, Artes e Ciências.">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#184082">
+  <title>Cursos e Programas - Instituto Horizonte de Educação</title>
+
+  <!-- Fontes do Google Fonts: Poppins (títulos) e Nunito Sans (texto) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&amp;family=Poppins:wght@600;700&amp;display=swap">
+
+  <!-- Folhas de estilo do projeto -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <!-- Link de salto: permite que usuários de teclado e leitores de tela pulem o menu -->
+  <a class="skip-link" href="#conteudo-principal" title="Pular direto para o conteúdo principal">Pular para o conteúdo principal</a>
+
+  <!-- ===== CABEÇALHO: logo e menu de navegação ===== -->
+  <header class="site-header">
+    <div class="site-header__inner">
+
+      <div class="brand">
+        <a class="brand__link" href="index.html" title="Ir para a página inicial do Instituto Horizonte">
+          <img class="brand__logo" src="images/logo.png" alt="Logotipo do Instituto Horizonte: sol amarelo nascendo sobre um livro aberto, em círculo azul" width="80" height="80">
+        </a>
+        <p class="brand__name">Instituto Horizonte de Educação</p>
+      </div>
+
+      <!-- Menu hambúrguer (somente CSS): o checkbox controla a abertura do menu no mobile -->
+      <input class="nav-toggle__input" type="checkbox" id="menu-toggle" title="Abrir ou fechar o menu">
+      <label class="nav-toggle__button" for="menu-toggle">
+        <span class="nav-toggle__bar"></span>
+        <span class="nav-toggle__bar"></span>
+        <span class="nav-toggle__bar"></span>
+        <span class="visually-hidden">Abrir ou fechar o menu de navegação</span>
+      </label>
+
+      <nav class="nav" aria-label="Menu principal">
+        <ul class="nav__list">
+          <li><a class="nav__link" href="index.html" title="Página inicial">Início</a></li>
+          <li><a class="nav__link" href="sobre.html" title="Conheça nossa história, equipe e estrutura">Sobre Nós</a></li>
+          <li><a class="nav__link" href="cursos.html" title="Veja todos os cursos e programas" aria-current="page">Cursos</a></li>
+          <li><a class="nav__link" href="contato.html" title="Fale com a gente">Contato</a></li>
+        </ul>
+      </nav>
+
+    </div>
+  </header>
+
+  <!-- ===== CONTEÚDO PRINCIPAL ===== -->
+  <main class="site-main" id="conteudo-principal">
+
+    <div class="page-header">
+      <h1 class="page-title">Cursos e Programas</h1>
+      <p class="page-header__lead">
+        Do ensino técnico à graduação, passando por idiomas e projetos de
+        extensão, o Horizonte tem um caminho para cada estudante.
+      </p>
+    </div>
+
+    <!-- Lista de cursos e programas (6 itens) -->
+    <section class="section" aria-labelledby="titulo-lista">
+      <h2 class="section__title" id="titulo-lista">Nossos cursos</h2>
+
+      <div class="card-grid">
+        <article class="card" id="informatica">
+          <figure class="card__media">
+            <img src="images/curso-informatica.jpg" alt="Ilustração de símbolos de código sobre fundo azul-arroxeado, representando o curso de Informática e Programação" width="800" height="450">
+            <figcaption class="card__caption">Curso técnico integrado ao ensino médio.</figcaption>
+          </figure>
+          <div class="card__body">
+            <h3 class="card__title">Informática e Programação</h3>
+            <p>Aborda lógica de programação, HTML, CSS, JavaScript, Python e banco de dados. O estudante conclui o curso com um portfólio de projetos reais desenvolvidos em equipe.</p>
+          </div>
+        </article>
+
+        <article class="card" id="pedagogia">
+          <figure class="card__media">
+            <img src="images/curso-pedagogia.jpg" alt="Ilustração de um livro aberto sobre fundo terracota, representando o curso de Licenciatura em Pedagogia" width="800" height="450">
+            <figcaption class="card__caption">Formação de professores para a educação básica.</figcaption>
+          </figure>
+          <div class="card__body">
+            <h3 class="card__title">Licenciatura em Pedagogia</h3>
+            <p>Forma educadores para a educação infantil e os anos iniciais do ensino fundamental, com estágios supervisionados em escolas públicas parceiras desde o primeiro ano.</p>
+          </div>
+        </article>
+
+        <article class="card" id="idiomas">
+          <figure class="card__media">
+            <img src="images/curso-ingles.jpg" alt="Ilustração de um globo terrestre sobre fundo verde, representando o curso livre de Idiomas" width="800" height="450">
+            <figcaption class="card__caption">Curso livre de línguas para jovens e adultos.</figcaption>
+          </figure>
+          <div class="card__body">
+            <h3 class="card__title">Idiomas: Inglês e Espanhol</h3>
+            <p>Turmas por nível, do básico ao avançado, com ênfase em conversação, preparação para exames de proficiência e cultura dos países de língua inglesa e espanhola.</p>
+          </div>
+        </article>
+
+        <article class="card" id="robotica">
+          <figure class="card__media">
+            <img src="images/curso-robotica.jpg" alt="Ilustração de uma engrenagem branca sobre fundo cinza-azulado, representando o programa de Robótica Educacional" width="800" height="450">
+            <figcaption class="card__caption">Programa de extensão aberto à comunidade.</figcaption>
+          </figure>
+          <div class="card__body">
+            <h3 class="card__title">Robótica Educacional</h3>
+            <p>Montagem, programação e testes de robôs com kits educacionais. Preparação das equipes para olimpíadas e torneios regionais.</p>
+          </div>
+        </article>
+
+        <article class="card" id="artes">
+          <figure class="card__media">
+            <img src="images/curso-artes.jpg" alt="Ilustração de uma paleta de tintas coloridas sobre fundo roxo, representando a oficina de Artes e Cultura Digital" width="800" height="450">
+            <figcaption class="card__caption">Oficina de criação artística e audiovisual.</figcaption>
+          </figure>
+          <div class="card__body">
+            <h3 class="card__title">Artes e Cultura Digital</h3>
+            <p>Desenho, fotografia, edição de vídeo e produção de conteúdo digital, com exposições semestrais abertas ao público.</p>
+          </div>
+        </article>
+
+        <article class="card" id="ciencias">
+          <figure class="card__media">
+            <img src="images/curso-ciencias.jpg" alt="Ilustração de um frasco de laboratório com líquido verde sobre fundo verde, representando o programa de Ciências" width="800" height="450">
+            <figcaption class="card__caption">Programa de iniciação científica júnior.</figcaption>
+          </figure>
+          <div class="card__body">
+            <h3 class="card__title">Ciências em Laboratório</h3>
+            <p>Experimentos de Física, Química e Biologia, com orientação de professores e apresentação dos resultados na feira anual de ciências.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Tabela comparativa de características dos cursos (6 colunas x 7 linhas) -->
+    <section class="section" aria-labelledby="titulo-comparativo">
+      <h2 class="section__title" id="titulo-comparativo">Comparativo entre os cursos</h2>
+      <p class="table-hint">Deslize a tabela para o lado para ver todas as colunas.</p>
+
+      <!-- O wrapper permite rolagem horizontal da tabela em telas pequenas -->
+      <div class="table-wrapper" role="region" aria-labelledby="titulo-comparativo" tabindex="0">
+        <table class="data-table">
+          <caption>Comparativo de características dos cursos e programas do Instituto Horizonte</caption>
+          <thead>
+            <tr>
+              <th scope="col">Curso / Programa</th>
+              <th scope="col">Modalidade</th>
+              <th scope="col">Duração</th>
+              <th scope="col">Carga horária</th>
+              <th scope="col">Turno</th>
+              <th scope="col">Público-alvo</th>
+            </tr>
+          </thead>
+          <tbody>
+                  <tr>
+                    <th scope="row">Informática e Programação</th>
+                    <td>Técnico integrado</td>
+                    <td>3 anos</td>
+                    <td>3.000 h</td>
+                    <td>Manhã</td>
+                    <td>Concluintes do ensino fundamental</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Licenciatura em Pedagogia</th>
+                    <td>Graduação presencial</td>
+                    <td>4 anos</td>
+                    <td>3.200 h</td>
+                    <td>Noite</td>
+                    <td>Concluintes do ensino médio</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Idiomas: Inglês e Espanhol</th>
+                    <td>Curso livre</td>
+                    <td>6 semestres</td>
+                    <td>360 h</td>
+                    <td>Tarde e noite</td>
+                    <td>Jovens e adultos</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Robótica Educacional</th>
+                    <td>Extensão</td>
+                    <td>2 semestres</td>
+                    <td>120 h</td>
+                    <td>Tarde</td>
+                    <td>Jovens de 12 a 17 anos</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Artes e Cultura Digital</th>
+                    <td>Oficina</td>
+                    <td>1 semestre</td>
+                    <td>80 h</td>
+                    <td>Sábado</td>
+                    <td>Público em geral</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Ciências em Laboratório</th>
+                    <td>Iniciação científica</td>
+                    <td>2 semestres</td>
+                    <td>100 h</td>
+                    <td>Tarde</td>
+                    <td>Estudantes do ensino médio</td>
+                  </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Conteúdo complementar -->
+    <aside class="aside-box" aria-labelledby="titulo-inscricao">
+      <h2 class="aside-box__title" id="titulo-inscricao">Como se inscrever</h2>
+      <ol>
+        <li>Escolha o curso ou programa de seu interesse.</li>
+        <li>Preencha o <a href="contato.html" title="Ir para o formulário de contato">formulário de contato</a> escolhendo o assunto "Matrícula".</li>
+        <li>Aguarde o retorno da secretaria em até dois dias úteis.</li>
+        <li>Entregue a documentação solicitada e confirme sua vaga.</li>
+      </ol>
+      <p>
+        Quer saber mais sobre a profissão de professor?
+        Consulte o
+        <a href="https://www.gov.br/mec/pt-br" target="_blank" rel="noopener noreferrer" title="Site do Ministério da Educação (abre em nova aba)">portal do MEC</a>.
+      </p>
+    </aside>
+
+  </main>
+
+  <!-- ===== RODAPÉ: contato, navegação e redes sociais ===== -->
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+
+      <div class="footer-col">
+        <h2 class="footer-col__title">Contato</h2>
+        <address>
+          <strong>Instituto Horizonte de Educação</strong><br>
+          Rua da Aprendizagem, 123 - Centro<br>
+          Salvador - BA, 40000-000<br>
+          Telefone: <a href="tel:+557130000000" title="Ligar para o Instituto">(71) 3000-0000</a><br>
+          E-mail: <a href="mailto:contato@institutohorizonte.example" title="Enviar e-mail ao Instituto">contato@institutohorizonte.example</a>
+        </address>
+      </div>
+
+      <div class="footer-col">
+        <h2 class="footer-col__title">Navegação</h2>
+        <nav aria-label="Menu do rodapé">
+          <ul class="footer-nav">
+            <li><a href="index.html" title="Página inicial">Início</a></li>
+            <li><a href="sobre.html" title="Conheça nossa história, equipe e estrutura">Sobre Nós</a></li>
+            <li><a href="cursos.html" title="Veja todos os cursos e programas">Cursos</a></li>
+            <li><a href="contato.html" title="Fale com a gente">Contato</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <div class="footer-col">
+        <h2 class="footer-col__title">Redes sociais</h2>
+        <ul class="social">
+          <li><a class="social__link" href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" title="Instagram do Instituto (abre em nova aba)">Instagram</a></li>
+          <li><a class="social__link" href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" title="Facebook do Instituto (abre em nova aba)">Facebook</a></li>
+          <li><a class="social__link" href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer" title="Canal do Instituto no YouTube (abre em nova aba)">YouTube</a></li>
+          <li><a class="social__link" href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" title="LinkedIn do Instituto (abre em nova aba)">LinkedIn</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- Copyright -->
+    <div class="site-footer__bottom">
+      <p><small>&copy; 2026 Instituto Horizonte de Educação (instituição fictícia, criada para fins didáticos). Todos os direitos reservados.</small></p>
+    </div>
+  </footer>
+
+</body>
+</html>

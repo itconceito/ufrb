@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Conheça a história, o corpo docente e a infraestrutura do Instituto Horizonte de Educação.">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#184082">
+  <title>Sobre Nós - Instituto Horizonte de Educação</title>
+
+  <!-- Fontes do Google Fonts: Poppins (títulos) e Nunito Sans (texto) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&amp;family=Poppins:wght@600;700&amp;display=swap">
+
+  <!-- Folhas de estilo do projeto -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <!-- Link de salto: permite que usuários de teclado e leitores de tela pulem o menu -->
+  <a class="skip-link" href="#conteudo-principal" title="Pular direto para o conteúdo principal">Pular para o conteúdo principal</a>
+
+  <!-- ===== CABEÇALHO: logo e menu de navegação ===== -->
+  <header class="site-header">
+    <div class="site-header__inner">
+
+      <div class="brand">
+        <a class="brand__link" href="index.html" title="Ir para a página inicial do Instituto Horizonte">
+          <img class="brand__logo" src="images/logo.png" alt="Logotipo do Instituto Horizonte: sol amarelo nascendo sobre um livro aberto, em círculo azul" width="80" height="80">
+        </a>
+        <p class="brand__name">Instituto Horizonte de Educação</p>
+      </div>
+
+      <!-- Menu hambúrguer (somente CSS): o checkbox controla a abertura do menu no mobile -->
+      <input class="nav-toggle__input" type="checkbox" id="menu-toggle" title="Abrir ou fechar o menu">
+      <label class="nav-toggle__button" for="menu-toggle">
+        <span class="nav-toggle__bar"></span>
+        <span class="nav-toggle__bar"></span>
+        <span class="nav-toggle__bar"></span>
+        <span class="visually-hidden">Abrir ou fechar o menu de navegação</span>
+      </label>
+
+      <nav class="nav" aria-label="Menu principal">
+        <ul class="nav__list">
+          <li><a class="nav__link" href="index.html" title="Página inicial">Início</a></li>
+          <li><a class="nav__link" href="sobre.html" title="Conheça nossa história, equipe e estrutura" aria-current="page">Sobre Nós</a></li>
+          <li><a class="nav__link" href="cursos.html" title="Veja todos os cursos e programas">Cursos</a></li>
+          <li><a class="nav__link" href="contato.html" title="Fale com a gente">Contato</a></li>
+        </ul>
+      </nav>
+
+    </div>
+  </header>
+
+  <!-- ===== CONTEÚDO PRINCIPAL ===== -->
+  <main class="site-main" id="conteudo-principal">
+
+    <div class="page-header">
+      <h1 class="page-title">Sobre Nós</h1>
+      <p class="page-header__lead">
+        Conheça a trajetória, as pessoas e a estrutura que fazem do Instituto
+        Horizonte um espaço de aprendizagem e convivência.
+      </p>
+    </div>
+
+    <!-- História da instituição -->
+    <section class="section" aria-labelledby="titulo-historia">
+      <h2 class="section__title" id="titulo-historia">Nossa história</h2>
+
+      <div class="split">
+        <article class="card">
+          <figure class="card__media">
+            <img src="images/historia.jpg" alt="Ilustração de um prédio com frontão triangular e colunas, representando a sede histórica do Instituto Horizonte" width="900" height="500">
+            <figcaption class="card__caption">Desde 1998, o Instituto Horizonte cresce junto com a comunidade.</figcaption>
+          </figure>
+          <div class="card__body">
+            <h3 class="card__title">Das primeiras turmas ao campus atual</h3>
+            <p>
+              O Instituto Horizonte nasceu em 1998, quando um grupo de professores
+              alugou uma pequena casa no Centro de Salvador para oferecer reforço
+              escolar gratuito a crianças do bairro. A procura foi tão grande que,
+              em poucos anos, a iniciativa se transformou em escola e, mais tarde,
+              em instituição de ensino técnico e superior.
+            </p>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card__body">
+            <h3 class="card__title">Linha do tempo</h3>
+            <ol class="timeline">
+              <li><strong>1998:</strong> fundação, com 3 professores e 40 alunos.</li>
+              <li><strong>2004:</strong> inauguração da sede própria e da biblioteca.</li>
+              <li><strong>2011:</strong> início dos cursos técnicos em Informática.</li>
+              <li><strong>2016:</strong> criação do programa de extensão em Robótica Educacional.</li>
+              <li><strong>2021:</strong> autorização da Licenciatura em Pedagogia.</li>
+              <li><strong>2025:</strong> reforma completa do laboratório de informática e do auditório.</li>
+            </ol>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Equipe e corpo docente (6 membros) -->
+    <section class="section" aria-labelledby="titulo-equipe">
+      <h2 class="section__title" id="titulo-equipe">Equipe e corpo docente</h2>
+      <p class="section__intro">Conheça alguns dos profissionais que fazem o Horizonte acontecer.</p>
+
+      <div class="card-grid">
+        <article class="card card--person">
+          <figure class="card__media">
+            <img src="images/docente-1.jpg" alt="Retrato ilustrado de Helena Moreira, de cabelo escuro e camisa azul" width="400" height="400">
+            <figcaption class="visually-hidden">Helena Moreira</figcaption>
+          </figure>
+          <div class="card__body">
+            <h3 class="card__title">Profa. Dra. Helena Moreira</h3>
+            <p class="card__role">Diretora-geral. Doutora em Educação, com 25 anos de experiência em gestão escolar.</p>
+          </div>
+        </article>
+
+        <article class="card card--person">
+          <figure class="card__media">
+            <img src="images/docente-2.jpg" alt="Retrato ilustrado de Carlos Andrade, de pele morena, cabelo preto e camisa vinho" width="400" height="400">
+            <figcaption class="visually-hidden">Carlos Andrade</figcaption>
+          </figure>
+          <div class="card__body">
+            <h3 class="card__title">Prof. Me. Carlos Andrade</h3>
+            <p class="card__role">Coordenador do curso de Informática e Programação. Mestre em Ciência da Computação.</p>
+          </div>
+        </article>
+
+        <article class="card card--person">
+          <figure class="card__media">
+            <img src="images/docente-3.jpg" alt="Retrato ilustrado de Marina Souza, de cabelo castanho e camisa verde" width="400" height="400">
+            <figcaption class="visually-hidden">Marina Souza</figcaption>
+          </figure>
+          <div class="card__body">
+            <h3 class="card__title">Profa. Marina Souza</h3>
+            <p class="card__role">Coordenadora de Pedagogia. Especialista em alfabetização e letramento.</p>
+          </div>
+        </article>
+
+        <article class="card card--person">
+          <figure class="card__media">
+            <img src="images/docente-4.jpg" alt="Retrato ilustrado de Roberto Lima, de pele escura, cabelo preto e camisa roxa" width="400" height="400">
+            <figcaption class="visually-hidden">Roberto Lima</figcaption>
+          </figure>
+          <div class="card__body">
+            <h3 class="card__title">Prof. Roberto Lima</h3>
+            <p class="card__role">Responsável pelo programa de Robótica Educacional e pelas equipes de competição.</p>
+          </div>
+        </article>
+
+        <article class="card card--person">
+          <figure class="card__media">
+            <img src="images/docente-5.jpg" alt="Retrato ilustrado de Juliana Pereira, de cabelo castanho escuro e camisa dourada" width="400" height="400">
+            <figcaption class="visually-hidden">Juliana Pereira</figcaption>
+          </figure>
+          <div class="card__body">
+            <h3 class="card__title">Profa. Juliana Pereira</h3>
+            <p class="card__role">Professora de Inglês e Espanhol, com certificações internacionais de proficiência.</p>
+          </div>
+        </article>
+
+        <article class="card card--person">
+          <figure class="card__media">
+            <img src="images/docente-6.jpg" alt="Retrato ilustrado de Fernanda Costa, de cabelo ruivo e camisa verde-azulada" width="400" height="400">
+            <figcaption class="visually-hidden">Fernanda Costa</figcaption>
+          </figure>
+          <div class="card__body">
+            <h3 class="card__title">Profa. Fernanda Costa</h3>
+            <p class="card__role">Bibliotecária-chefe e coordenadora do programa de incentivo à leitura.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Infraestrutura e recursos disponíveis -->
+    <section class="section" aria-labelledby="titulo-infra">
+      <h2 class="section__title" id="titulo-infra">Infraestrutura e recursos</h2>
+
+      <div class="card-grid card-grid--trio">
+        <article class="card">
+          <figure class="card__media">
+            <img src="images/biblioteca.jpg" alt="Ilustração de um livro aberto sobre fundo marrom, representando a Biblioteca Paulo Freire" width="800" height="450">
+            <figcaption class="card__caption">Acervo com mais de 20 mil títulos físicos e digitais.</figcaption>
+          </figure>
+          <div class="card__body">
+            <h3 class="card__title">Biblioteca Paulo Freire</h3>
+            <p>Salas de estudo individual e em grupo, acesso a periódicos e empréstimo on-line.</p>
+          </div>
+        </article>
+
+        <article class="card">
+          <figure class="card__media">
+            <img src="images/laboratorio.jpg" alt="Ilustração de símbolos de código sobre fundo azul, representando o Laboratório de Informática" width="800" height="450">
+            <figcaption class="card__caption">40 computadores com internet de alta velocidade.</figcaption>
+          </figure>
+          <div class="card__body">
+            <h3 class="card__title">Laboratório de Informática</h3>
+            <p>Equipamentos atualizados e softwares livres instalados para as aulas práticas.</p>
+          </div>
+        </article>
+
+        <article class="card">
+          <figure class="card__media">
+            <img src="images/auditorio.jpg" alt="Ilustração de cinco pessoas sentadas diante de um palco, representando o Auditório Anísio Teixeira" width="800" height="450">
+            <figcaption class="card__caption">Espaço para eventos, palestras e formaturas.</figcaption>
+          </figure>
+          <div class="card__body">
+            <h3 class="card__title">Auditório Anísio Teixeira</h3>
+            <p>Capacidade para 200 pessoas, com acessibilidade para cadeirantes e sistema de som.</p>
+          </div>
+        </article>
+      </div>
+
+      <article class="card">
+        <div class="card__body">
+          <h3 class="card__title">Outros recursos disponíveis</h3>
+          <ul class="check-list">
+            <li>Laboratório de Ciências e Robótica</li>
+            <li>Ateliê de Artes e Cultura Digital</li>
+            <li>Cantina e áreas de convivência</li>
+            <li>Quadra poliesportiva coberta</li>
+            <li>Rampas, elevador e banheiros adaptados</li>
+            <li>Wi-Fi gratuito em todo o campus</li>
+          </ul>
+        </div>
+      </article>
+    </section>
+
+    <!-- Galeria de imagens do campus -->
+    <section class="section" aria-labelledby="titulo-galeria">
+      <h2 class="section__title" id="titulo-galeria">Galeria do campus</h2>
+      <p class="section__intro">Um passeio pelos espaços e atividades do Instituto Horizonte.</p>
+
+      <div class="gallery">
+        <figure class="gallery__item">
+          <img src="images/biblioteca.jpg" alt="Ilustração de um livro aberto sobre fundo marrom, representando a Biblioteca Paulo Freire" width="800" height="450">
+          <figcaption class="gallery__caption">Biblioteca Paulo Freire</figcaption>
+        </figure>
+        <figure class="gallery__item">
+          <img src="images/laboratorio.jpg" alt="Ilustração de símbolos de código sobre fundo azul, representando o Laboratório de Informática" width="800" height="450">
+          <figcaption class="gallery__caption">Laboratório de Informática</figcaption>
+        </figure>
+        <figure class="gallery__item">
+          <img src="images/auditorio.jpg" alt="Ilustração de cinco pessoas sentadas diante de um palco, representando o Auditório Anísio Teixeira" width="800" height="450">
+          <figcaption class="gallery__caption">Auditório Anísio Teixeira</figcaption>
+        </figure>
+        <figure class="gallery__item">
+          <img src="images/historia.jpg" alt="Ilustração de um prédio com frontão triangular e colunas, representando a sede histórica do Instituto Horizonte" width="900" height="500">
+          <figcaption class="gallery__caption">Nossa sede histórica</figcaption>
+        </figure>
+        <figure class="gallery__item">
+          <img src="images/curso-robotica.jpg" alt="Ilustração de uma engrenagem branca sobre fundo cinza-azulado, representando as oficinas de Robótica" width="800" height="450">
+          <figcaption class="gallery__caption">Oficinas de Robótica</figcaption>
+        </figure>
+        <figure class="gallery__item">
+          <img src="images/curso-artes.jpg" alt="Ilustração de uma paleta de tintas coloridas sobre fundo roxo, representando o ateliê de Artes e Cultura Digital" width="800" height="450">
+          <figcaption class="gallery__caption">Ateliê de Artes</figcaption>
+        </figure>
+        <figure class="gallery__item">
+          <img src="images/curso-ciencias.jpg" alt="Ilustração de um frasco de laboratório com líquido verde sobre fundo verde, representando o Laboratório de Ciências" width="800" height="450">
+          <figcaption class="gallery__caption">Laboratório de Ciências</figcaption>
+        </figure>
+        <figure class="gallery__item">
+          <img src="images/curso-informatica.jpg" alt="Ilustração de símbolos de código sobre fundo azul-arroxeado, representando as aulas de Programação" width="800" height="450">
+          <figcaption class="gallery__caption">Aulas de Programação</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- Conteúdo complementar -->
+    <aside class="aside-box" aria-labelledby="titulo-visita">
+      <h2 class="aside-box__title" id="titulo-visita">Venha nos visitar</h2>
+      <p>
+        Oferecemos visitas guiadas ao campus de segunda a sexta-feira.
+        <a href="contato.html" title="Agende sua visita pela página de contato">Agende sua visita</a>.
+      </p>
+    </aside>
+
+  </main>
+
+  <!-- ===== RODAPÉ: contato, navegação e redes sociais ===== -->
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+
+      <div class="footer-col">
+        <h2 class="footer-col__title">Contato</h2>
+        <address>
+          <strong>Instituto Horizonte de Educação</strong><br>
+          Rua da Aprendizagem, 123 - Centro<br>
+          Salvador - BA, 40000-000<br>
+          Telefone: <a href="tel:+557130000000" title="Ligar para o Instituto">(71) 3000-0000</a><br>
+          E-mail: <a href="mailto:contato@institutohorizonte.example" title="Enviar e-mail ao Instituto">contato@institutohorizonte.example</a>
+        </address>
+      </div>
+
+      <div class="footer-col">
+        <h2 class="footer-col__title">Navegação</h2>
+        <nav aria-label="Menu do rodapé">
+          <ul class="footer-nav">
+            <li><a href="index.html" title="Página inicial">Início</a></li>
+            <li><a href="sobre.html" title="Conheça nossa história, equipe e estrutura">Sobre Nós</a></li>
+            <li><a href="cursos.html" title="Veja todos os cursos e programas">Cursos</a></li>
+            <li><a href="contato.html" title="Fale com a gente">Contato</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <div class="footer-col">
+        <h2 class="footer-col__title">Redes sociais</h2>
+        <ul class="social">
+          <li><a class="social__link" href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" title="Instagram do Instituto (abre em nova aba)">Instagram</a></li>
+          <li><a class="social__link" href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" title="Facebook do Instituto (abre em nova aba)">Facebook</a></li>
+          <li><a class="social__link" href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer" title="Canal do Instituto no YouTube (abre em nova aba)">YouTube</a></li>
+          <li><a class="social__link" href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" title="LinkedIn do Instituto (abre em nova aba)">LinkedIn</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- Copyright -->
+    <div class="site-footer__bottom">
+      <p><small>&copy; 2026 Instituto Horizonte de Educação (instituição fictícia, criada para fins didáticos). Todos os direitos reservados.</small></p>
+    </div>
+  </footer>
+
+</body>
+</html>

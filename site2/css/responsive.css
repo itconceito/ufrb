@@ -1,0 +1,170 @@
+/* ==========================================================================
+   Instituto Horizonte de Educação - Ajustes responsivos (mobile first)
+
+   Breakpoints exigidos pelo trabalho:
+   - Mobile:  até 767px      -> estilos base de style.css
+                                (coluna única e menu hambúrguer)
+   - Tablet:  768px a 1023px -> regras de "min-width: 768px"
+   - Desktop: 1024px ou mais -> regras de "min-width: 1024px"
+   ========================================================================== */
+
+
+/* ==========================================================================
+   TABLET (768px em diante)
+   Menu horizontal, cards em 2 colunas e rodapé em 2 colunas.
+   ========================================================================== */
+@media (min-width: 768px) {
+  h1 {
+    font-size: 2.4rem;
+  }
+
+  h2 {
+    font-size: 1.8rem;
+  }
+
+  h3 {
+    font-size: 1.3rem;
+  }
+
+  /* Cabeçalho: o hambúrguer some e o menu fica na horizontal */
+  .site-header__inner {
+    flex-wrap: nowrap;
+    padding: 0.75rem 1.5rem;
+  }
+
+  .nav-toggle__input,
+  .nav-toggle__button {
+    display: none;
+  }
+
+  .nav {
+    display: block;
+    flex-basis: auto;
+    padding-top: 0;
+  }
+
+  .nav__list {
+    display: flex;
+    gap: 0.25rem;
+  }
+
+  .nav__list li {
+    margin: 0;
+  }
+
+  .nav__link {
+    border-bottom: 4px solid transparent;
+    border-left: 0;
+    padding: 0.6rem 0.9rem;
+  }
+
+  .nav__link:hover,
+  .nav__link:focus {
+    border-bottom-color: var(--color-accent);
+  }
+
+  .nav__link[aria-current="page"],
+  .nav__link[aria-current="page"]:hover,
+  .nav__link[aria-current="page"]:focus {
+    border-bottom-color: var(--color-accent);
+  }
+
+  /* Layout geral */
+  .site-main {
+    padding: 2rem 1.5rem 4rem;
+  }
+
+  .hero {
+    padding: 2.5rem;
+  }
+
+  .hero__title {
+    font-size: 2.6rem;
+  }
+
+  .page-header {
+    padding: 3rem 2.5rem;
+  }
+
+  .card-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Com 3 cards em 2 colunas, o último ocupa a linha inteira */
+  .card-grid--trio .card:last-child {
+    grid-column: 1 / -1;
+  }
+
+  .split {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .check-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* A tabela já cabe na tela: a dica de rolagem deixa de ser necessária */
+  .table-hint {
+    display: none;
+  }
+
+  .site-footer__inner {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 3rem 1.5rem 1.5rem;
+  }
+}
+
+
+/* ==========================================================================
+   DESKTOP (1024px em diante)
+   Cards em 3 colunas, hero em 2 colunas e rodapé em 3 colunas.
+   ========================================================================== */
+@media (min-width: 1024px) {
+  .site-header__inner {
+    padding: 1rem 2rem;
+  }
+
+  .brand__name {
+    font-size: 1.05rem;
+  }
+
+  .nav__link {
+    padding: 0.6rem 1.1rem;
+  }
+
+  .site-main {
+    padding: 2.5rem 2rem 5rem;
+  }
+
+  .hero {
+    align-items: center;
+    gap: 3rem;
+    grid-template-columns: 1.1fr 1fr;
+    padding: 3.5rem;
+  }
+
+  .hero__title {
+    font-size: 3rem;
+  }
+
+  .card-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .card-grid--trio .card:last-child {
+    grid-column: auto;
+  }
+
+  .contact-layout {
+    grid-template-columns: 1.4fr 1fr;
+  }
+
+  .map__frame {
+    height: 26rem;
+  }
+
+  .site-footer__inner {
+    grid-template-columns: 1.4fr 1fr 1fr;
+    padding: 3rem 2rem 1.5rem;
+  }
+}

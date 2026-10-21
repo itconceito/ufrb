@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Entre em contato com o Instituto Horizonte de Educação: formulário, endereço, telefone e mapa.">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#184082">
+  <title>Contato - Instituto Horizonte de Educação</title>
+
+  <!-- Fontes do Google Fonts: Poppins (títulos) e Nunito Sans (texto) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&amp;family=Poppins:wght@600;700&amp;display=swap">
+
+  <!-- Folhas de estilo do projeto -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <!-- Link de salto: permite que usuários de teclado e leitores de tela pulem o menu -->
+  <a class="skip-link" href="#conteudo-principal" title="Pular direto para o conteúdo principal">Pular para o conteúdo principal</a>
+
+  <!-- ===== CABEÇALHO: logo e menu de navegação ===== -->
+  <header class="site-header">
+    <div class="site-header__inner">
+
+      <div class="brand">
+        <a class="brand__link" href="index.html" title="Ir para a página inicial do Instituto Horizonte">
+          <img class="brand__logo" src="images/logo.png" alt="Logotipo do Instituto Horizonte: sol amarelo nascendo sobre um livro aberto, em círculo azul" width="80" height="80">
+        </a>
+        <p class="brand__name">Instituto Horizonte de Educação</p>
+      </div>
+
+      <!-- Menu hambúrguer (somente CSS): o checkbox controla a abertura do menu no mobile -->
+      <input class="nav-toggle__input" type="checkbox" id="menu-toggle" title="Abrir ou fechar o menu">
+      <label class="nav-toggle__button" for="menu-toggle">
+        <span class="nav-toggle__bar"></span>
+        <span class="nav-toggle__bar"></span>
+        <span class="nav-toggle__bar"></span>
+        <span class="visually-hidden">Abrir ou fechar o menu de navegação</span>
+      </label>
+
+      <nav class="nav" aria-label="Menu principal">
+        <ul class="nav__list">
+          <li><a class="nav__link" href="index.html" title="Página inicial">Início</a></li>
+          <li><a class="nav__link" href="sobre.html" title="Conheça nossa história, equipe e estrutura">Sobre Nós</a></li>
+          <li><a class="nav__link" href="cursos.html" title="Veja todos os cursos e programas">Cursos</a></li>
+          <li><a class="nav__link" href="contato.html" title="Fale com a gente" aria-current="page">Contato</a></li>
+        </ul>
+      </nav>
+
+    </div>
+  </header>
+
+  <!-- ===== CONTEÚDO PRINCIPAL ===== -->
+  <main class="site-main" id="conteudo-principal">
+
+    <div class="page-header">
+      <h1 class="page-title">Fale Conosco</h1>
+      <p class="page-header__lead">
+        Tem dúvidas sobre matrículas, cursos ou visitas? Preencha o formulário
+        abaixo. Os campos marcados com asterisco (*) são obrigatórios.
+      </p>
+    </div>
+
+    <div class="contact-layout">
+
+      <!-- Formulário de contato com validação HTML5 (não envia dados a um servidor) -->
+      <section aria-labelledby="titulo-form">
+        <h2 class="section__title" id="titulo-form">Formulário de contato</h2>
+
+        <form class="form" action="#" method="post">
+          <fieldset class="form__fieldset">
+            <legend class="form__legend">Seus dados</legend>
+
+            <!-- Nome completo: texto, obrigatório -->
+            <div class="form__group">
+              <label class="form__label" for="nome">Nome completo <span class="form__required" aria-hidden="true">*</span></label>
+              <input class="form__control" type="text" id="nome" name="nome" required minlength="5" maxlength="100"
+                     autocomplete="name" placeholder="Ex.: Maria da Silva"
+                     title="Informe seu nome completo (mínimo de 5 caracteres)">
+              <p class="form__error">Informe seu nome completo (mínimo de 5 caracteres).</p>
+            </div>
+
+            <!-- E-mail: validação nativa do tipo email, obrigatório -->
+            <div class="form__group">
+              <label class="form__label" for="email">E-mail <span class="form__required" aria-hidden="true">*</span></label>
+              <input class="form__control" type="email" id="email" name="email" required maxlength="120"
+                     autocomplete="email" placeholder="exemplo@email.com"
+                     title="Informe um endereço de e-mail válido">
+              <p class="form__error">Informe um e-mail válido, como nome@dominio.com.</p>
+            </div>
+
+            <!-- Telefone: opcional, com padrão brasileiro -->
+            <div class="form__group">
+              <label class="form__label" for="telefone">Telefone (opcional)</label>
+              <input class="form__control" type="tel" id="telefone" name="telefone"
+                     pattern="\(?[0-9]{2}\)?\s?9?[0-9]{4}-?[0-9]{4}"
+                     autocomplete="tel" placeholder="(71) 99999-9999"
+                     title="Use o formato (71) 99999-9999 ou (71) 3000-0000">
+              <p class="form__error">Use o formato (71) 99999-9999 ou (71) 3000-0000.</p>
+            </div>
+          </fieldset>
+
+          <fieldset class="form__fieldset">
+            <legend class="form__legend">Sua mensagem</legend>
+
+            <!-- Assunto: select com opções -->
+            <div class="form__group">
+              <label class="form__label" for="assunto">Assunto <span class="form__required" aria-hidden="true">*</span></label>
+              <select class="form__control" id="assunto" name="assunto" required title="Escolha o assunto da mensagem">
+                <option value="">Selecione um assunto</option>
+                <option value="matricula">Matrícula</option>
+                <option value="cursos">Informações sobre cursos</option>
+                <option value="visita">Agendamento de visita</option>
+                <option value="documentos">Documentos e secretaria</option>
+                <option value="sugestao">Sugestão ou elogio</option>
+                <option value="outro">Outro assunto</option>
+              </select>
+            </div>
+
+            <!-- Mensagem: textarea obrigatória, mínimo de 20 caracteres -->
+            <div class="form__group">
+              <label class="form__label" for="mensagem">Mensagem <span class="form__required" aria-hidden="true">*</span></label>
+              <textarea class="form__control" id="mensagem" name="mensagem" rows="6" cols="50" required
+                        minlength="20" maxlength="1000"
+                        placeholder="Escreva aqui sua mensagem..."
+                        title="Escreva pelo menos 20 caracteres"></textarea>
+              <p class="form__hint">Mínimo de 20 caracteres.</p>
+              <p class="form__error">A mensagem precisa ter pelo menos 20 caracteres.</p>
+            </div>
+          </fieldset>
+
+          <!-- Política de privacidade: checkbox obrigatório -->
+          <div class="form__check">
+            <input class="form__check-input" type="checkbox" id="privacidade" name="privacidade" value="aceito" required>
+            <label for="privacidade">
+              Li e aceito a política de privacidade e o tratamento dos meus dados
+              para fins de contato <span class="form__required" aria-hidden="true">*</span>
+            </label>
+          </div>
+
+          <!-- Botões de enviar e limpar -->
+          <div class="form__actions">
+            <button class="btn btn--primary" type="submit" title="Enviar mensagem">Enviar mensagem</button>
+            <button class="btn btn--secondary" type="reset" title="Limpar todos os campos do formulário">Limpar formulário</button>
+          </div>
+        </form>
+      </section>
+
+      <!-- Endereço, telefones e horários -->
+      <section aria-labelledby="titulo-endereco">
+        <h2 class="section__title" id="titulo-endereco">Endereço e telefones</h2>
+
+        <article class="card">
+          <div class="card__body">
+            <address>
+              <strong>Instituto Horizonte de Educação</strong><br>
+              Rua da Aprendizagem, 123 - Centro<br>
+              Salvador - BA, CEP 40000-000<br>
+              Telefone: <a href="tel:+557130000000" title="Ligar para a secretaria">(71) 3000-0000</a><br>
+              WhatsApp: <a href="tel:+5571999990000" title="Ligar para o WhatsApp do Instituto">(71) 99999-0000</a><br>
+              E-mail: <a href="mailto:contato@institutohorizonte.example" title="Enviar e-mail ao Instituto">contato@institutohorizonte.example</a>
+            </address>
+
+            <h3>Horário de atendimento</h3>
+            <ul>
+              <li>Segunda a sexta-feira: 8h às 21h</li>
+              <li>Sábado: 8h às 12h</li>
+              <li>Domingos e feriados: fechado</li>
+            </ul>
+          </div>
+        </article>
+      </section>
+
+    </div>
+
+    <!-- Mapa (iframe do OpenStreetMap; o endereço é fictício e o mapa mostra o Centro de Salvador) -->
+    <section class="section" aria-labelledby="titulo-mapa">
+      <h2 class="section__title" id="titulo-mapa">Como chegar</h2>
+
+      <figure class="map">
+        <iframe class="map__frame"
+          src="https://www.openstreetmap.org/export/embed.html?bbox=-38.5200%2C-12.9850%2C-38.4950%2C-12.9600&amp;layer=mapnik&amp;marker=-12.9714%2C-38.5108"
+          title="Mapa mostrando a região central de Salvador, Bahia, onde fica o Instituto Horizonte"
+          width="600" height="400" loading="lazy"></iframe>
+        <figcaption class="map__caption">
+          Localização aproximada no Centro de Salvador.
+          <a href="https://www.openstreetmap.org/?mlat=-12.9714&amp;mlon=-38.5108#map=15/-12.9714/-38.5108" target="_blank" rel="noopener noreferrer" title="Abrir o mapa maior no OpenStreetMap (abre em nova aba)">Ver mapa ampliado</a>
+        </figcaption>
+      </figure>
+    </section>
+
+    <!-- Conteúdo complementar -->
+    <aside class="aside-box" aria-labelledby="titulo-canais">
+      <h2 class="aside-box__title" id="titulo-canais">Outros canais</h2>
+      <p>
+        Antes de escrever, consulte a página de
+        <a href="cursos.html" title="Ver cursos e programas">cursos</a>:
+        sua dúvida pode já estar respondida lá.
+      </p>
+    </aside>
+
+  </main>
+
+  <!-- ===== RODAPÉ: contato, navegação e redes sociais ===== -->
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+
+      <div class="footer-col">
+        <h2 class="footer-col__title">Contato</h2>
+        <address>
+          <strong>Instituto Horizonte de Educação</strong><br>
+          Rua da Aprendizagem, 123 - Centro<br>
+          Salvador - BA, 40000-000<br>
+          Telefone: <a href="tel:+557130000000" title="Ligar para o Instituto">(71) 3000-0000</a><br>
+          E-mail: <a href="mailto:contato@institutohorizonte.example" title="Enviar e-mail ao Instituto">contato@institutohorizonte.example</a>
+        </address>
+      </div>
+
+      <div class="footer-col">
+        <h2 class="footer-col__title">Navegação</h2>
+        <nav aria-label="Menu do rodapé">
+          <ul class="footer-nav">
+            <li><a href="index.html" title="Página inicial">Início</a></li>
+            <li><a href="sobre.html" title="Conheça nossa história, equipe e estrutura">Sobre Nós</a></li>
+            <li><a href="cursos.html" title="Veja todos os cursos e programas">Cursos</a></li>
+            <li><a href="contato.html" title="Fale com a gente">Contato</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <div class="footer-col">
+        <h2 class="footer-col__title">Redes sociais</h2>
+        <ul class="social">
+          <li><a class="social__link" href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" title="Instagram do Instituto (abre em nova aba)">Instagram</a></li>
+          <li><a class="social__link" href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" title="Facebook do Instituto (abre em nova aba)">Facebook</a></li>
+          <li><a class="social__link" href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer" title="Canal do Instituto no YouTube (abre em nova aba)">YouTube</a></li>
+          <li><a class="social__link" href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" title="LinkedIn do Instituto (abre em nova aba)">LinkedIn</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- Copyright -->
+    <div class="site-footer__bottom">
+      <p><small>&copy; 2026 Instituto Horizonte de Educação (instituição fictícia, criada para fins didáticos). Todos os direitos reservados.</small></p>
+    </div>
+  </footer>
+
+</body>
+</html>

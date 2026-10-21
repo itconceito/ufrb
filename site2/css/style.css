@@ -1,0 +1,1102 @@
+/* ==========================================================================
+   Instituto Horizonte de Educação - Folha de estilos principal
+   Abordagem: mobile first (estilos base valem para telas pequenas).
+   Os ajustes para tablet e desktop ficam em responsive.css.
+
+   Índice
+    1. Variáveis (design tokens) e modo escuro
+    2. Reset e base
+    3. Tipografia
+    4. Acessibilidade (foco, link de salto, texto oculto)
+    5. Cabeçalho e navegação (menu hambúrguer)
+    6. Layout principal e seções
+    7. Botões
+    8. Hero e cabeçalho de página
+    9. Cards e grids
+   10. Linha do tempo e listas
+   11. Galeria de imagens
+   12. Tabela
+   13. Formulário
+   14. Mapa e blocos de destaque (aside)
+   15. Rodapé
+   16. Animações
+
+   Convenções: nomes de classe seguem o padrão bloco__elemento--modificador
+   e as propriedades de cada regra estão em ordem alfabética.
+   ========================================================================== */
+
+
+/* ==========================================================================
+   1. VARIÁVEIS (DESIGN TOKENS) E MODO ESCURO
+   Paleta principal: azul-marinho, amarelo, branco/cinza-claro e texto escuro.
+   Todos os pares texto/fundo foram pensados para contraste WCAG AA (4,5:1).
+   ========================================================================== */
+:root {
+  --color-accent: #f5b324;
+  --color-accent-hover: #ffc83d;
+  --color-bg: #f5f7fb;
+  --color-border: #d5dcea;
+  --color-brand: #184082;
+  --color-brand-light: #2a62b8;
+  --color-error: #b3261e;
+  --color-error-bg: #fdecea;
+  --color-focus: #184082;
+  --color-footer-bg: #0f2a55;
+  --color-footer-text: #dbe3f3;
+  --color-header-bg: #ffffff;
+  --color-heading: #184082;
+  --color-input-border: #6b7a94;
+  --color-link: #1a56a8;
+  --color-link-hover: #123c7a;
+  --color-muted: #4a5568;
+  --color-on-accent: #1d2433;
+  --color-row-hover: #fff3d0;
+  --color-success: #1e7a3e;
+  --color-surface: #ffffff;
+  --color-surface-alt: #eaf0fa;
+  --color-text: #1d2433;
+  --font-body: "Nunito Sans", "Segoe UI", Arial, sans-serif;
+  --font-heading: "Poppins", "Segoe UI", Arial, sans-serif;
+  --max-width: 72rem;
+  --radius: 0.75rem;
+  --shadow: 0 2px 8px rgba(15, 42, 85, 0.12);
+  --shadow-hover: 0 10px 24px rgba(15, 42, 85, 0.2);
+}
+
+/* Modo escuro: segue a preferência do sistema operacional do usuário */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-bg: #0e1524;
+    --color-border: #2c3a57;
+    --color-brand: #1f4a8f;
+    --color-brand-light: #2b5fb3;
+    --color-error: #ff8a80;
+    --color-error-bg: #3a1f26;
+    --color-focus: #ffd166;
+    --color-footer-bg: #080f1d;
+    --color-footer-text: #cbd5e8;
+    --color-header-bg: #121b30;
+    --color-heading: #e3ecff;
+    --color-input-border: #8a99b5;
+    --color-link: #8fbaff;
+    --color-link-hover: #c1d9ff;
+    --color-muted: #aab4c8;
+    --color-row-hover: #2b3a5c;
+    --color-success: #6fdc8c;
+    --color-surface: #172136;
+    --color-surface-alt: #1f2c47;
+    --color-text: #e6ebf5;
+    --shadow: 0 2px 8px rgba(0, 0, 0, 0.45);
+    --shadow-hover: 0 10px 24px rgba(0, 0, 0, 0.6);
+  }
+
+  /* Suaviza o brilho das imagens para não ofuscar no tema escuro */
+  .card__media img,
+  .gallery__item img,
+  .hero__media img {
+    filter: brightness(0.9);
+  }
+}
+
+
+/* ==========================================================================
+   2. RESET E BASE
+   ========================================================================== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 100%;
+  scroll-padding-top: 6rem;
+}
+
+body {
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Imagens e iframes responsivos */
+img,
+iframe {
+  display: block;
+  height: auto;
+  max-width: 100%;
+}
+
+figure {
+  margin: 0;
+}
+
+address {
+  font-style: normal;
+}
+
+
+/* ==========================================================================
+   3. TIPOGRAFIA
+   Hierarquia: Poppins (títulos) e Nunito Sans (texto), tamanhos em rem.
+   ========================================================================== */
+h1,
+h2,
+h3 {
+  color: var(--color-heading);
+  font-family: var(--font-heading);
+  line-height: 1.25;
+  margin: 0 0 0.75rem;
+}
+
+h1 {
+  font-size: 1.9rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+}
+
+h3 {
+  font-size: 1.2rem;
+}
+
+p {
+  margin: 0 0 1rem;
+}
+
+ul,
+ol {
+  margin: 0 0 1rem;
+  padding-left: 1.25rem;
+}
+
+li {
+  margin-bottom: 0.35rem;
+}
+
+a {
+  color: var(--color-link);
+  text-decoration: underline;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--color-link-hover);
+  text-decoration-thickness: 2px;
+}
+
+small {
+  font-size: 0.875rem;
+}
+
+
+/* ==========================================================================
+   4. ACESSIBILIDADE
+   ========================================================================== */
+/* Indicador de foco visível para navegação por teclado */
+a:focus,
+button:focus,
+select:focus,
+textarea:focus,
+input:focus,
+.table-wrapper:focus {
+  outline: 3px solid var(--color-focus);
+  outline-offset: 2px;
+}
+
+/* Link de salto: aparece somente quando recebe foco */
+.skip-link {
+  background: var(--color-accent);
+  border-radius: 0 0 0.5rem 0.5rem;
+  color: var(--color-on-accent);
+  font-weight: 700;
+  left: 1rem;
+  padding: 0.75rem 1rem;
+  position: absolute;
+  top: -5rem;
+  transition: top 0.2s ease;
+  z-index: 100;
+}
+
+.skip-link:focus {
+  color: var(--color-on-accent);
+  top: 0;
+}
+
+/* Texto disponível apenas para leitores de tela */
+.visually-hidden {
+  border: 0;
+  clip-path: inset(50%);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+
+/* ==========================================================================
+   5. CABEÇALHO E NAVEGAÇÃO
+   O menu hambúrguer usa apenas CSS: um checkbox (focável pelo teclado)
+   controla a abertura do menu em telas menores que 768px.
+   ========================================================================== */
+.site-header {
+  background: var(--color-header-bg);
+  border-bottom: 4px solid var(--color-accent);
+  box-shadow: var(--shadow);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+.site-header__inner {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 0 auto;
+  max-width: var(--max-width);
+  padding: 0.75rem 1rem;
+  position: relative;
+}
+
+/* Marca: logo + nome da instituição */
+.brand {
+  align-items: center;
+  display: flex;
+  flex: 1;
+  gap: 0.75rem;
+  min-height: 3.25rem;
+  min-width: 0;
+  padding-right: 0.75rem;
+}
+
+.brand__link {
+  display: block;
+  flex-shrink: 0;
+  line-height: 0;
+}
+
+.brand__logo {
+  height: 3.25rem;
+  width: 3.25rem;
+}
+
+.brand__name {
+  color: var(--color-heading);
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin: 0;
+}
+
+/* Botão hambúrguer */
+.nav-toggle__input {
+  cursor: pointer;
+  height: 2.75rem;
+  margin: 0;
+  opacity: 0;
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  width: 2.75rem;
+  z-index: 2;
+}
+
+.nav-toggle__button {
+  align-items: center;
+  border: 2px solid var(--color-input-border);
+  border-radius: 0.5rem;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  height: 2.75rem;
+  justify-content: center;
+  width: 2.75rem;
+}
+
+.nav-toggle__bar {
+  background: var(--color-heading);
+  border-radius: 2px;
+  display: block;
+  height: 3px;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  width: 1.5rem;
+}
+
+.nav-toggle__input:focus + .nav-toggle__button {
+  outline: 3px solid var(--color-focus);
+  outline-offset: 2px;
+}
+
+/* Animação do ícone: hambúrguer vira "X" quando o menu está aberto */
+.nav-toggle__input:checked + .nav-toggle__button .nav-toggle__bar:nth-child(1) {
+  transform: translateY(0.49rem) rotate(45deg);
+}
+
+.nav-toggle__input:checked + .nav-toggle__button .nav-toggle__bar:nth-child(2) {
+  opacity: 0;
+}
+
+.nav-toggle__input:checked + .nav-toggle__button .nav-toggle__bar:nth-child(3) {
+  transform: translateY(-0.49rem) rotate(-45deg);
+}
+
+/* Menu: fechado por padrão no mobile */
+.nav {
+  display: none;
+  flex-basis: 100%;
+  padding-top: 0.75rem;
+}
+
+.nav-toggle__input:checked ~ .nav {
+  display: block;
+}
+
+.nav__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav__list li {
+  margin: 0 0 0.25rem;
+}
+
+.nav__link {
+  border-left: 4px solid transparent;
+  border-radius: 0.25rem;
+  color: var(--color-heading);
+  display: block;
+  font-weight: 700;
+  padding: 0.75rem 1rem;
+  text-decoration: none;
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+/* Estados de hover e foco dos links do menu */
+.nav__link:hover,
+.nav__link:focus {
+  background: var(--color-surface-alt);
+  border-left-color: var(--color-accent);
+  color: var(--color-link-hover);
+}
+
+/* Página atual */
+.nav__link[aria-current="page"],
+.nav__link[aria-current="page"]:hover,
+.nav__link[aria-current="page"]:focus {
+  background: var(--color-brand);
+  border-left-color: var(--color-accent);
+  color: #ffffff;
+}
+
+
+/* ==========================================================================
+   6. LAYOUT PRINCIPAL E SEÇÕES
+   ========================================================================== */
+.site-main {
+  margin: 0 auto;
+  max-width: var(--max-width);
+  padding: 1.5rem 1rem 3rem;
+}
+
+.section {
+  margin-bottom: 3rem;
+}
+
+.section__title {
+  margin-bottom: 1rem;
+}
+
+/* Detalhe amarelo sob os títulos de seção */
+.section__title::after {
+  background: var(--color-accent);
+  border-radius: 2px;
+  content: "";
+  display: block;
+  height: 4px;
+  margin-top: 0.5rem;
+  width: 3.5rem;
+}
+
+.section__intro {
+  color: var(--color-muted);
+  max-width: 46rem;
+}
+
+
+/* ==========================================================================
+   7. BOTÕES
+   ========================================================================== */
+.btn {
+  border: 2px solid transparent;
+  border-radius: 999px;
+  cursor: pointer;
+  display: inline-block;
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.2;
+  padding: 0.75rem 1.5rem;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color 0.2s ease, box-shadow 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.btn:hover {
+  box-shadow: var(--shadow-hover);
+  transform: translateY(-2px);
+}
+
+.btn--primary {
+  background: var(--color-accent);
+  color: var(--color-on-accent);
+}
+
+.btn--primary:hover {
+  background: var(--color-accent-hover);
+  color: var(--color-on-accent);
+}
+
+.btn--secondary {
+  background: transparent;
+  border-color: var(--color-link);
+  color: var(--color-link);
+}
+
+.btn--secondary:hover {
+  background: var(--color-link);
+  color: var(--color-surface);
+}
+
+
+/* ==========================================================================
+   8. HERO E CABEÇALHO DE PÁGINA
+   ========================================================================== */
+.hero,
+.page-header {
+  background: linear-gradient(135deg, var(--color-brand) 0%, var(--color-brand-light) 100%);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  color: #ffffff;
+}
+
+.hero {
+  display: grid;
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+  overflow: hidden;
+  padding: 1.5rem;
+}
+
+.hero__title,
+.page-title {
+  color: #ffffff;
+}
+
+.hero__title {
+  font-size: 2rem;
+}
+
+.hero__lead {
+  color: #eef3ff;
+  font-size: 1.1rem;
+}
+
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin: 1.25rem 0 0;
+}
+
+.hero__media img {
+  border-radius: 0.5rem;
+  width: 100%;
+}
+
+.hero__caption {
+  color: #dbe6ff;
+  font-size: 0.875rem;
+  margin-top: 0.5rem;
+}
+
+/* Botão secundário e foco precisam de cores próprias sobre o fundo azul */
+.hero .btn--secondary {
+  border-color: #ffffff;
+  color: #ffffff;
+}
+
+.hero .btn--secondary:hover {
+  background: #ffffff;
+  color: var(--color-brand);
+}
+
+.hero a:focus {
+  outline-color: var(--color-accent);
+}
+
+.page-header {
+  margin-bottom: 2.5rem;
+  padding: 2rem 1.5rem;
+}
+
+.page-title {
+  margin-bottom: 0.5rem;
+}
+
+.page-header__lead {
+  color: #eef3ff;
+  margin: 0;
+  max-width: 42rem;
+}
+
+
+/* ==========================================================================
+   9. CARDS E GRIDS
+   Usados em: valores, destaques, cursos, equipe e infraestrutura.
+   ========================================================================== */
+.card-grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: 1fr;
+  margin-bottom: 1.5rem;
+}
+
+.card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transition: box-shadow 0.25s ease, transform 0.25s ease;
+}
+
+.card:hover {
+  box-shadow: var(--shadow-hover);
+  transform: translateY(-4px);
+}
+
+.card__media img {
+  height: 12rem;
+  object-fit: cover;
+  width: 100%;
+}
+
+.card__caption {
+  background: var(--color-surface-alt);
+  color: var(--color-muted);
+  font-size: 0.85rem;
+  padding: 0.5rem 1.25rem;
+}
+
+.card__body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  padding: 1.25rem;
+}
+
+.card__body > :last-child {
+  margin-bottom: 0;
+}
+
+.card__body address + h3 {
+  margin-top: 1.5rem;
+}
+
+.card__more {
+  font-weight: 700;
+  margin-bottom: 0;
+  margin-top: auto;
+}
+
+.card--value {
+  border-top: 4px solid var(--color-accent);
+}
+
+/* Card de pessoa (equipe): foto redonda centralizada */
+.card--person {
+  text-align: center;
+}
+
+.card--person .card__media img {
+  border: 4px solid var(--color-accent);
+  border-radius: 50%;
+  height: 9rem;
+  margin: 1.5rem auto 0;
+  width: 9rem;
+}
+
+.card__role {
+  color: var(--color-muted);
+}
+
+/* Duas colunas lado a lado (história: texto e linha do tempo) */
+.split {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: 1fr;
+}
+
+
+/* ==========================================================================
+   10. LINHA DO TEMPO E LISTAS
+   ========================================================================== */
+.timeline {
+  border-left: 3px solid var(--color-accent);
+  list-style: none;
+  margin: 0;
+  padding-left: 1.25rem;
+}
+
+.timeline li {
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+.timeline li::before {
+  background: var(--color-brand);
+  border: 3px solid var(--color-accent);
+  border-radius: 50%;
+  content: "";
+  height: 0.9rem;
+  left: -1.8rem;
+  position: absolute;
+  top: 0.35rem;
+  width: 0.9rem;
+}
+
+.check-list {
+  display: grid;
+  gap: 0.5rem;
+  grid-template-columns: 1fr;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.check-list li {
+  margin: 0;
+  padding-left: 1.75rem;
+  position: relative;
+}
+
+.check-list li::before {
+  color: var(--color-success);
+  content: "\2713";
+  font-weight: 700;
+  left: 0;
+  position: absolute;
+}
+
+
+/* ==========================================================================
+   11. GALERIA DE IMAGENS
+   Grid uniforme: o número de colunas se ajusta sozinho à largura da tela.
+   ========================================================================== */
+.gallery {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+}
+
+.gallery__item {
+  background: var(--color-brand);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  position: relative;
+  transition: box-shadow 0.25s ease;
+}
+
+.gallery__item img {
+  height: 13rem;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+  width: 100%;
+}
+
+.gallery__caption {
+  background: rgba(15, 42, 85, 0.88);
+  bottom: 0;
+  color: #ffffff;
+  font-size: 0.9rem;
+  left: 0;
+  padding: 0.6rem 0.9rem;
+  position: absolute;
+  right: 0;
+  transition: background-color 0.3s ease;
+}
+
+/* Efeitos de hover: zoom na imagem e legenda destacada */
+.gallery__item:hover {
+  box-shadow: var(--shadow-hover);
+}
+
+.gallery__item:hover img {
+  transform: scale(1.08);
+}
+
+.gallery__item:hover .gallery__caption {
+  background: rgba(24, 64, 130, 0.96);
+}
+
+
+/* ==========================================================================
+   12. TABELA
+   O wrapper permite rolagem horizontal em telas pequenas.
+   ========================================================================== */
+.table-hint {
+  color: var(--color-muted);
+  font-size: 0.875rem;
+}
+
+.table-wrapper {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow-x: auto;
+}
+
+.data-table {
+  border-collapse: collapse;
+  min-width: 42rem;
+  width: 100%;
+}
+
+.data-table caption {
+  color: var(--color-muted);
+  font-size: 0.9rem;
+  padding: 0.75rem 1rem;
+  text-align: left;
+}
+
+.data-table th,
+.data-table td {
+  border-bottom: 1px solid var(--color-border);
+  padding: 0.75rem 1rem;
+  text-align: left;
+  vertical-align: top;
+}
+
+/* Cabeçalho destacado */
+.data-table thead th {
+  background: var(--color-brand);
+  color: #ffffff;
+  font-family: var(--font-heading);
+  font-size: 0.9rem;
+  white-space: nowrap;
+}
+
+.data-table tbody th {
+  color: var(--color-heading);
+  font-weight: 700;
+}
+
+/* Linhas zebradas e efeito de hover */
+.data-table tbody tr:nth-child(even) {
+  background: var(--color-surface-alt);
+}
+
+.data-table tbody tr {
+  transition: background-color 0.2s ease;
+}
+
+.data-table tbody tr:hover {
+  background: var(--color-row-hover);
+}
+
+
+/* ==========================================================================
+   13. FORMULÁRIO
+   Mensagens de erro e estados de validação usam apenas CSS: a mensagem
+   aparece quando o campo preenchido é inválido (:invalid + placeholder).
+   ========================================================================== */
+.contact-layout {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: 1fr;
+  margin-bottom: 3rem;
+}
+
+.form__fieldset {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  margin: 0 0 1.25rem;
+  min-width: 0;
+  padding: 1.25rem;
+}
+
+.form__legend {
+  color: var(--color-heading);
+  font-family: var(--font-heading);
+  font-weight: 700;
+  padding: 0 0.5rem;
+}
+
+.form__group {
+  margin-bottom: 1rem;
+}
+
+.form__label {
+  display: block;
+  font-weight: 700;
+  margin-bottom: 0.35rem;
+}
+
+.form__required {
+  color: var(--color-error);
+}
+
+.form__control {
+  background: var(--color-surface);
+  border: 2px solid var(--color-input-border);
+  border-radius: 0.5rem;
+  color: var(--color-text);
+  display: block;
+  font-family: inherit;
+  font-size: 1rem;
+  padding: 0.7rem 0.9rem;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+  width: 100%;
+}
+
+.form__control:hover {
+  border-color: var(--color-link);
+}
+
+/* Estado de foco */
+.form__control:focus {
+  border-color: var(--color-focus);
+}
+
+textarea.form__control {
+  min-height: 9rem;
+  resize: vertical;
+}
+
+/* Estado inválido (somente depois que o usuário digitou algo) */
+.form__control:invalid:not(:placeholder-shown) {
+  background: var(--color-error-bg);
+  border-color: var(--color-error);
+}
+
+/* Estado válido */
+.form__control:valid:not(:placeholder-shown),
+select.form__control:valid {
+  border-color: var(--color-success);
+}
+
+/* Mensagem de erro: escondida até o campo ficar inválido */
+.form__error {
+  color: var(--color-error);
+  display: none;
+  font-size: 0.875rem;
+  font-weight: 700;
+  margin: 0.4rem 0 0;
+}
+
+.form__error::before {
+  content: "\26A0\00A0";
+}
+
+.form__control:invalid:not(:placeholder-shown) ~ .form__error {
+  display: block;
+}
+
+.form__hint {
+  color: var(--color-muted);
+  font-size: 0.875rem;
+  margin: 0.35rem 0 0;
+}
+
+.form__check {
+  align-items: flex-start;
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+}
+
+.form__check-input {
+  flex-shrink: 0;
+  height: 1.25rem;
+  margin: 0.2rem 0 0;
+  width: 1.25rem;
+}
+
+.form__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+
+/* ==========================================================================
+   14. MAPA E BLOCOS DE DESTAQUE (ASIDE)
+   ========================================================================== */
+.map__frame {
+  border: 0;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  height: 20rem;
+  width: 100%;
+}
+
+.map__caption {
+  color: var(--color-muted);
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+}
+
+.aside-box {
+  background: var(--color-surface-alt);
+  border-left: 6px solid var(--color-accent);
+  border-radius: var(--radius);
+  margin-bottom: 3rem;
+  padding: 1.25rem 1.5rem;
+}
+
+.aside-box__title {
+  font-size: 1.25rem;
+}
+
+.aside-box > :last-child {
+  margin-bottom: 0;
+}
+
+
+/* ==========================================================================
+   15. RODAPÉ
+   ========================================================================== */
+.site-footer {
+  background: var(--color-footer-bg);
+  border-top: 4px solid var(--color-accent);
+  color: var(--color-footer-text);
+}
+
+.site-footer__inner {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: 1fr;
+  margin: 0 auto;
+  max-width: var(--max-width);
+  padding: 2.5rem 1rem 1.5rem;
+}
+
+.site-footer a {
+  color: #ffd166;
+}
+
+.site-footer a:hover {
+  color: #ffffff;
+}
+
+.site-footer a:focus {
+  outline-color: #ffd166;
+}
+
+.footer-col__title {
+  color: #ffffff;
+  font-size: 1.1rem;
+}
+
+.footer-nav {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Links sociais estilizados como "pílulas" */
+.social {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.social li {
+  margin: 0;
+}
+
+.social__link {
+  border: 2px solid #ffd166;
+  border-radius: 999px;
+  display: inline-block;
+  font-weight: 700;
+  padding: 0.4rem 1rem;
+  text-decoration: none;
+  transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.social__link:hover {
+  background: #ffd166;
+  color: #0f2a55;
+  transform: translateY(-2px);
+}
+
+.site-footer__bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  margin: 0 auto;
+  max-width: var(--max-width);
+  padding: 1rem;
+  text-align: center;
+}
+
+.site-footer__bottom p {
+  margin: 0;
+}
+
+
+/* ==========================================================================
+   16. ANIMAÇÕES
+   Aplicadas somente a quem não pediu redução de movimento no sistema.
+   ========================================================================== */
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(1rem);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  .hero,
+  .page-header,
+  .section,
+  .card,
+  .aside-box {
+    animation: fade-up 0.6s ease backwards;
+  }
+
+  /* Entrada escalonada dos cards de uma mesma linha */
+  .card-grid .card:nth-child(3n + 2) {
+    animation-delay: 0.1s;
+  }
+
+  .card-grid .card:nth-child(3n) {
+    animation-delay: 0.2s;
+  }
+}
