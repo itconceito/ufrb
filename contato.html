@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Entre em contato com o Instituto Horizonte de Educação: formulário, endereço, telefone e mapa.">
+  <title>Contato - Instituto Horizonte de Educação</title>
+</head>
+<body>
+
+  <!-- Link de salto para acessibilidade -->
+  <a href="#conteudo-principal" title="Pular direto para o conteúdo principal">Pular para o conteúdo principal</a>
+
+  <!-- ===== CABEÇALHO ===== -->
+  <header>
+    <a href="index.html" title="Ir para a página inicial do Instituto Horizonte">
+      <img src="images/logo.png" alt="Logotipo do Instituto Horizonte: sol amarelo nascendo sobre um livro aberto, em círculo azul" width="80" height="80">
+    </a>
+    <p><strong>Instituto Horizonte de Educação</strong></p>
+
+    <nav aria-label="Menu principal">
+      <ul>
+        <li><a href="index.html" title="Página inicial">Início</a></li>
+        <li><a href="sobre.html" title="Conheça nossa história, equipe e estrutura">Sobre Nós</a></li>
+        <li><a href="cursos.html" title="Veja todos os cursos e programas">Cursos</a></li>
+        <li><a href="contato.html" title="Fale com a gente" aria-current="page">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ===== CONTEÚDO PRINCIPAL ===== -->
+  <main id="conteudo-principal">
+
+    <h1>Fale Conosco</h1>
+    <p>
+      Tem dúvidas sobre matrículas, cursos ou visitas? Preencha o formulário
+      abaixo. Os campos marcados com asterisco (*) são obrigatórios.
+    </p>
+
+    <!-- Formulário de contato com validação HTML5 (não envia dados a um servidor) -->
+    <section aria-labelledby="titulo-form">
+      <h2 id="titulo-form">Formulário de contato</h2>
+
+      <form action="#" method="post">
+        <fieldset>
+          <legend>Seus dados</legend>
+
+          <!-- Nome completo: texto, obrigatório -->
+          <p>
+            <label for="nome">Nome completo *</label><br>
+            <input type="text" id="nome" name="nome" required minlength="5" maxlength="100"
+                   autocomplete="name" placeholder="Ex.: Maria da Silva"
+                   title="Informe seu nome completo (mínimo de 5 caracteres)">
+          </p>
+
+          <!-- E-mail: validação nativa do tipo email, obrigatório -->
+          <p>
+            <label for="email">E-mail *</label><br>
+            <input type="email" id="email" name="email" required maxlength="120"
+                   autocomplete="email" placeholder="exemplo@email.com"
+                   title="Informe um endereço de e-mail válido">
+          </p>
+
+          <!-- Telefone: opcional, com padrão brasileiro -->
+          <p>
+            <label for="telefone">Telefone (opcional)</label><br>
+            <input type="tel" id="telefone" name="telefone"
+                   pattern="\(?[0-9]{2}\)?\s?9?[0-9]{4}-?[0-9]{4}"
+                   autocomplete="tel" placeholder="(71) 99999-9999"
+                   title="Use o formato (71) 99999-9999 ou (71) 3000-0000">
+          </p>
+        </fieldset>
+
+        <fieldset>
+          <legend>Sua mensagem</legend>
+
+          <!-- Assunto: select com opções agrupadas -->
+          <p>
+            <label for="assunto">Assunto *</label><br>
+            <select id="assunto" name="assunto" required title="Escolha o assunto da mensagem">
+              <option value="">Selecione um assunto</option>
+              <option value="matricula">Matrícula</option>
+              <option value="cursos">Informações sobre cursos</option>
+              <option value="visita">Agendamento de visita</option>
+              <option value="documentos">Documentos e secretaria</option>
+              <option value="sugestao">Sugestão ou elogio</option>
+              <option value="outro">Outro assunto</option>
+            </select>
+          </p>
+
+          <!-- Mensagem: textarea obrigatória, mínimo de 20 caracteres -->
+          <p>
+            <label for="mensagem">Mensagem * (mínimo de 20 caracteres)</label><br>
+            <textarea id="mensagem" name="mensagem" rows="6" cols="50" required
+                      minlength="20" maxlength="1000"
+                      placeholder="Escreva aqui sua mensagem..."
+                      title="Escreva pelo menos 20 caracteres"></textarea>
+          </p>
+        </fieldset>
+
+        <!-- Política de privacidade: checkbox obrigatório -->
+        <p>
+          <input type="checkbox" id="privacidade" name="privacidade" value="aceito" required>
+          <label for="privacidade">
+            Li e aceito a política de privacidade e o tratamento dos meus dados
+            para fins de contato *
+          </label>
+        </p>
+
+        <!-- Botões de enviar e limpar -->
+        <p>
+          <button type="submit" title="Enviar mensagem">Enviar mensagem</button>
+          <button type="reset" title="Limpar todos os campos do formulário">Limpar formulário</button>
+        </p>
+      </form>
+    </section>
+
+    <hr>
+
+    <!-- Endereço e telefone -->
+    <section aria-labelledby="titulo-endereco">
+      <h2 id="titulo-endereco">Endereço e telefones</h2>
+
+      <address>
+        <strong>Instituto Horizonte de Educação</strong><br>
+        Rua da Aprendizagem, 123 - Centro<br>
+        Salvador - BA, CEP 40000-000<br>
+        Telefone: <a href="tel:+557130000000" title="Ligar para a secretaria">(71) 3000-0000</a><br>
+        WhatsApp: <a href="tel:+5571999990000" title="Ligar para o WhatsApp do Instituto">(71) 99999-0000</a><br>
+        E-mail: <a href="mailto:contato@institutohorizonte.example" title="Enviar e-mail ao Instituto">contato@institutohorizonte.example</a>
+      </address>
+
+      <h3>Horário de atendimento</h3>
+      <ul>
+        <li>Segunda a sexta-feira: 8h às 21h</li>
+        <li>Sábado: 8h às 12h</li>
+        <li>Domingos e feriados: fechado</li>
+      </ul>
+    </section>
+
+    <hr>
+
+    <!-- Mapa (iframe do OpenStreetMap; o endereço é fictício e o mapa mostra o Centro de Salvador) -->
+    <section aria-labelledby="titulo-mapa">
+      <h2 id="titulo-mapa">Como chegar</h2>
+
+      <figure>
+        <iframe
+          src="https://www.openstreetmap.org/export/embed.html?bbox=-38.5200%2C-12.9850%2C-38.4950%2C-12.9600&amp;layer=mapnik&amp;marker=-12.9714%2C-38.5108"
+          title="Mapa mostrando a região central de Salvador, Bahia, onde fica o Instituto Horizonte"
+          width="600" height="400" loading="lazy"></iframe>
+        <figcaption>
+          Localização aproximada no Centro de Salvador.
+          <a href="https://www.openstreetmap.org/?mlat=-12.9714&amp;mlon=-38.5108#map=15/-12.9714/-38.5108" target="_blank" rel="noopener noreferrer" title="Abrir o mapa maior no OpenStreetMap (abre em nova aba)">Ver mapa ampliado</a>
+        </figcaption>
+      </figure>
+    </section>
+
+    <!-- Conteúdo complementar -->
+    <aside aria-labelledby="titulo-redes">
+      <h2 id="titulo-redes">Outros canais</h2>
+      <p>
+        Antes de escrever, consulte a página de
+        <a href="cursos.html" title="Ver cursos e programas">cursos</a>:
+        sua dúvida pode já estar respondida lá.
+      </p>
+    </aside>
+
+  </main>
+
+  <!-- ===== RODAPÉ ===== -->
+  <footer>
+    <h2>Contato</h2>
+    <address>
+      <strong>Instituto Horizonte de Educação</strong><br>
+      Rua da Aprendizagem, 123 - Centro<br>
+      Salvador - BA, 40000-000<br>
+      Telefone: <a href="tel:+557130000000" title="Ligar para o Instituto">(71) 3000-0000</a><br>
+      E-mail: <a href="mailto:contato@institutohorizonte.example" title="Enviar e-mail ao Instituto">contato@institutohorizonte.example</a>
+    </address>
+    <nav aria-label="Menu do rodapé">
+      <ul>
+        <li><a href="index.html" title="Página inicial">Início</a></li>
+        <li><a href="sobre.html" title="Sobre nós">Sobre Nós</a></li>
+        <li><a href="cursos.html" title="Cursos e programas">Cursos</a></li>
+        <li><a href="contato.html" title="Contato">Contato</a></li>
+      </ul>
+    </nav>
+    <p><small>&copy; 2026 Instituto Horizonte de Educação (instituição fictícia, criada para fins didáticos). Todos os direitos reservados.</small></p>
+  </footer>
+
+</body>
+</html>
