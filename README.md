@@ -23,7 +23,7 @@ trabalho1/
 └── README.md       Este arquivo
 ```
 
-## Páginas e requisitos atendidos
+## Páginas e requisitos
 
 | Página | Conteúdo |
 |--------|----------|
