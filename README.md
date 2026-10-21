@@ -1,9 +1,8 @@
-# Trabalho 1: Site Institucional com HTML Semântico
+ls# Trabalho 1: Site Institucional com HTML Semântico
 
 **Instituição (fictícia):** Instituto Horizonte de Educação
 **Disciplina / Curso:** Licenciatura em Computação (EAD), UFRB
-**Período:** Semanas 1-2, valor de 15 pontos
-**Equipe:** _(preencher: nomes dos 2-3 integrantes)_
+
 
 ## Descrição
 
@@ -81,18 +80,4 @@ internet.
 As imagens foram geradas como ilustrações simples para este trabalho, sem uso
 de material com direitos autorais.
 
-## Validação recomendada antes da entrega
-
-1. Validar cada página em <https://validator.w3.org/>
-2. Rodar a extensão WAVE para verificar a acessibilidade
-3. Testar a navegação apenas com o teclado (Tab, Shift+Tab, Enter)
-4. Testar o formulário com campos vazios, e-mail inválido e mensagem curta
-
-## Organização da equipe
-
-_(preencher: divisão de tarefas por integrante e fluxo de trabalho no Git/GitHub)_
-
-Sugestão de divisão: cada integrante fica responsável por 1-2 páginas, com
-commits pequenos e mensagens descritivas, e a validação final é feita em
-conjunto.
 # ufrb
