@@ -59,10 +59,8 @@ trabalho3/
 - **Filtro de gênero com busca**: o endpoint de busca do TMDB não aceita gênero, então, quando há texto digitado, o filtro é aplicado aos resultados da página atual. Sem texto, o filtro usa o endpoint `discover`, que filtra no servidor.
 - **Segurança**: os cards são criados com `createElement`/`textContent`, sem `innerHTML`.
 
-## Equipe
+## Desenolvimento
 
-| Nome | Contribuição |
-|------|--------------|
-|      |              |
+Trabalho realizado por Marcio A Oliveira para a UFRB (Licenciatura em Computação - Desenvolvimento de Software I)
 
 Este produto usa a API do TMDB, mas não é endossado nem certificado por ela.
