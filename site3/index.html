@@ -16,10 +16,12 @@
     <nav aria-label="Principal">
       <a href="index.html" aria-current="page">Descobrir</a>
       <a href="favoritos.html">Favoritos <span id="fav-count" class="badge">0</span></a>
+      <button type="button" id="key-toggle" class="link-btn">Chave da API</button>
     </nav>
   </header>
 
   <main>
+    <p id="boot-warning" class="banner warn" hidden>O JavaScript não carregou. Se você abriu o <strong>index.html</strong> com duplo clique, use um servidor local (extensão Live Server do VS Code) ou abra o link do GitHub Pages. Se já está no GitHub Pages, confira se as pastas <strong>js</strong> e <strong>css</strong> foram enviadas ao repositório.</p>
     <section class="hero">
       <h1>O que vamos assistir hoje?</h1>
       <form id="search-form" class="search" role="search">
@@ -61,5 +63,10 @@
 
   <dialog id="modal" aria-label="Detalhes do título"></dialog>
   <script type="module" src="js/app.js"></script>
+  <script>
+    setTimeout(function () {
+      if (!window.claqueteReady) document.getElementById("boot-warning").hidden = false;
+    }, 2000);
+  </script>
 </body>
 </html>
