@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Favoritos | Claquete</title>
+  <link rel="icon" href="data:,">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="favorites">
+  <header class="topbar">
+    <a class="brand" href="index.html">claquete</a>
+    <nav aria-label="Principal">
+      <a href="index.html">Descobrir</a>
+      <a href="favoritos.html" aria-current="page">Favoritos <span id="fav-count" class="badge">0</span></a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h1>Seus favoritos</h1>
+    </section>
+    <p id="status" class="status" role="status" aria-live="polite"></p>
+    <ul id="grid" class="grid"></ul>
+  </main>
+
+  <dialog id="modal" aria-label="Detalhes do título"></dialog>
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>
