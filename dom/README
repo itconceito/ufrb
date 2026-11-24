@@ -1,0 +1,18 @@
+# Painel de Controle de Chamados (DOM Playground)
+
+Página web interativa em HTML, CSS e JavaScript puro que simula a abertura e o acompanhamento de chamados de suporte (N2), demonstrando seleção de elementos do DOM, alteração dinâmica de conteúdo e estilos, além da resposta a eventos de usuário.
+
+## Funcionalidades
+
+* **Seleção de elementos do DOM:** Captura referências da interface utilizando `document.getElementById()` e `document.querySelector()`.
+* **Atualização em tempo real (`input`):** Exibe a descrição do chamado conforme o usuário digita e atualiza o contador de caracteres (até o limite de 60 caracteres).
+* **Prioridade e SLA (`change`):** Altera a cor da borda lateral, a cor do badge e o rótulo de prioridade de acordo com o nível selecionado (`baixa`, `media` ou `alta`).
+* **Controle de estado (`click`):** Alterna o chamado entre aberto e concluído, atualizando o HTML interno do status, o texto e a cor do botão, além de aplicar ou remover a classe CSS `.resolvido`.
+
+## Estrutura do Projeto
+
+Como toda a aplicação está reunida em um único arquivo, não há dependências externas nem necessidade de build:
+
+```text
+.
+└── index.html    # Estrutura HTML, estilos CSS e lógica JavaScript
