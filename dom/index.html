@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manipulação do DOM - Painel de Chamados</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f4f6f9;
+      color: #333;
+      display: flex;
+      justify-content: center;
+      padding: 40px 20px;
+      margin: 0;
+    }
+    .container {
+      background: #fff;
+      padding: 25px;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      width: 100%;
+      max-width: 500px;
+    }
+    h1 { font-size: 1.4rem; margin-top: 0; }
+    .form-group { margin-bottom: 15px; }
+    label { display: block; font-weight: 600; margin-bottom: 5px; }
+    input, select, button {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      box-sizing: border-box;
+      font-size: 1rem;
+    }
+    button {
+      background-color: #0056b3;
+      color: white;
+      border: none;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background 0.2s;
+    }
+    button:hover { background-color: #004494; }
+    
+    /* Cartão de Preview */
+    .ticket-card {
+      margin-top: 25px;
+      padding: 15px;
+      border-left: 5px solid #28a745;
+      background-color: #f8f9fa;
+      border-radius: 4px;
+      transition: all 0.3s ease;
+    }
+    .badge {
+      display: inline-block;
+      padding: 3px 8px;
+      font-size: 0.8rem;
+      font-weight: bold;
+      border-radius: 12px;
+      color: #fff;
+      background-color: #28a745;
+    }
+    .contador { font-size: 0.8rem; color: #666; text-align: right; }
+    .resolvido { opacity: 0.6; text-decoration: line-through; }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1 id="titulo-pagina">Abertura de Chamado (N2)</h1>
+
+    <div class="form-group">
+      <label for="input-assunto">Descrição do Problema:</label>
+      <input type="text" id="input-assunto" placeholder="Ex: Falha de comunicação com servidor..." maxlength="60">
+      <div class="contador"><span id="char-count">0</span>/60 caracteres</div>
+    </div>
+
+    <div class="form-group">
+      <label for="select-prioridade">Nível de Prioridade:</label>
+      <select id="select-prioridade">
+        <option value="baixa">Baixa (SLA 24h)</option>
+        <option value="media">Média (SLA 8h)</option>
+        <option value="alta">Alta (SLA 2h - Crítico)</option>
+      </select>
+    </div>
+
+    <button id="btn-resolver">Marcar como Resolvido</button>
+
+    <!-- Área que terá conteúdo e estilo modificados dinamicamente -->
+    <div id="card-preview" class="ticket-card">
+      <span id="badge-status" class="badge">Prioridade: Baixa</span>
+      <h3 id="preview-titulo">Aguardando descrição do chamado...</h3>
+      <p id="preview-info">Status: <strong>Em aberto</strong></p>
+    </div>
+  </div>
+
+  <script>
+    // 1. SELEÇÃO DOS ELEMENTOS DO DOM
+    const inputAssunto = document.getElementById('input-assunto');
+    const charCount = document.querySelector('#char-count');
+    const selectPrioridade = document.getElementById('select-prioridade');
+    const btnResolver = document.getElementById('btn-resolver');
+    
+    const cardPreview = document.getElementById('card-preview');
+    const badgeStatus = document.getElementById('badge-status');
+    const previewTitulo = document.getElementById('preview-titulo');
+    const previewInfo = document.getElementById('preview-info');
+
+    let chamadoResolvido = false;
+
+    // 2. EVENTO 'input': Atualiza texto e contador em tempo real enquanto o usuário digita
+    inputAssunto.addEventListener('input', (evento) => {
+      const textoDigitado = evento.target.value;
+      
+      // Modifica o conteúdo de texto
+      charCount.textContent = textoDigitado.length;
+      previewTitulo.textContent = textoDigitado.trim() !== '' 
+        ? textoDigitado 
+        : 'Aguardando descrição do chamado...';
+    });
+
+    // 3. EVENTO 'change': Modifica estilos (cores) e conteúdo conforme a prioridade escolhida
+    selectPrioridade.addEventListener('change', (evento) => {
+      const nivel = evento.target.value;
+
+      if (nivel === 'baixa') {
+        cardPreview.style.borderLeftColor = '#28a745';
+        badgeStatus.style.backgroundColor = '#28a745';
+        badgeStatus.textContent = 'Prioridade: Baixa';
+      } else if (nivel === 'media') {
+        cardPreview.style.borderLeftColor = '#ffc107';
+        badgeStatus.style.backgroundColor = '#d39e00';
+        badgeStatus.textContent = 'Prioridade: Média';
+      } else if (nivel === 'alta') {
+        cardPreview.style.borderLeftColor = '#dc3545';
+        badgeStatus.style.backgroundColor = '#dc3545';
+        badgeStatus.textContent = 'Prioridade: Alta (Urgente)';
+      }
+    });
+
+    // 4. EVENTO 'click': Alterna classes CSS, estilos do botão e HTML interno
+    btnResolver.addEventListener('click', () => {
+      chamadoResolvido = !chamadoResolvido;
+
+      if (chamadoResolvido) {
+        cardPreview.classList.add('resolvido');
+        previewInfo.innerHTML = 'Status: <strong style="color: green;">Concluído</strong>';
+        btnResolver.textContent = 'Reabrir Chamado';
+        btnResolver.style.backgroundColor = '#6c757d';
+      } else {
+        cardPreview.classList.remove('resolvido');
+        previewInfo.innerHTML = 'Status: <strong>Em aberto</strong>';
+        btnResolver.textContent = 'Marcar como Resolvido';
+        btnResolver.style.backgroundColor = '#0056b3';
+      }
+    });
+  </script>
+
+</body>
+</html>
